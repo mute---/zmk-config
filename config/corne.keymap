@@ -20,6 +20,21 @@
 };
 
 / {
+        behaviors {
+                hm: balanced_homerow_mods {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_MODS";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <0>;
+                        flavor = "balanced";
+                        bindings = <&kp>, <&kp>;
+                };
+                &lt {
+                        quick-tap-ms = <100>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -27,7 +42,7 @@
 // -----------------------------------------------------------------------------------------
                         bindings = <
    &kp GRAVE  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBKT
-   &kp ESC  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp ESC  &kp A &hm LGUI S &mh LALT D &hm LCTL F &kp G   &kp H &hm RCTL J  &hm LALT K     &hm RGUI L   &kp SEMI &kp SQT
    &kp BSLH &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RBKT
                   &lt 2 TAB &mt LSFT SPACE &lt 1 DEL   &lt 1 BSPC &mt RSFT RET &lt 2 TAB
                         >;
@@ -37,7 +52,7 @@
 // -----------------------------------------------------------------------------------------
                         bindings = <
    &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR   &kp LPAR &kp RPAR    &kp UNDER &kp PLUS
-   &kp N1   &kp N2 &kp N2   &kp N3   &kp N4    &kp N5    &kp N6   &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS &kp EQUAL
+   &kp N1   &kp N2 &hm LGUI N3   &hm LALT N4    &hm LCTL N5    &kp N6   &kp N7 &hm RCTL N8 &hm LALT N9 &hm RGUI N0 &kp MINUS &kp EQUAL
    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans   &trans &trans    &trans &trans
                           	        &trans &trans       &trans &trans &trans   &trans
                         >;
@@ -47,7 +62,7 @@
 // -----------------------------------------------------------------------------------------
                         bindings = <
    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-   &trans &trans &kp C_PREV &kp C_PP &kp C_NEXT &kp C_VOL_UP &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &kp PSCRN
+   &trans &trans &hm LGUI C_PREV &hm LALT C_PP &hm LCTL C_NEXT &kp C_VOL_UP &kp LEFT &hm RCTL DOWN &hm LALT UP &hm RGUI RIGHT &trans &kp PSCRN
    &kp LS(LCTRL) &kp INS &trans &trans &kp C_MUTE &kp C_VOL_DN &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &kp SLCK
                           	        &trans &trans       &trans &trans &trans   &trans
                         >;
