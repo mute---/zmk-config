@@ -19,6 +19,10 @@
     };
 };
 
+&lt {
+        quick-tap-ms = <100>;
+};
+
 / {
         behaviors {
                 hm: balanced_homerow_mods {
@@ -29,9 +33,6 @@
                         quick-tap-ms = <0>;
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
-                };
-                &lt {
-                        quick-tap-ms = <100>;
                 };
         };
 
