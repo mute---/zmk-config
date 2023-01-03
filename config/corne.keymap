@@ -19,19 +19,20 @@
     };
 };
 
+&lt {
+        quick-tap-ms = <200>;
+};
+
 / {
 
-        &lt {
-                quick-tap-ms = <100>;
-        };
-        
+
         behaviors {
                 hm: balanced_homerow_mods {
                         compatible = "zmk,behavior-hold-tap";
                         label = "HOMEROW_MODS";
                         #binding-cells = <2>;
-                        tapping-term-ms = <200>;
-                        quick-tap-ms = <50>;
+                        tapping-term-ms = <150>;
+                        quick-tap-ms = <150>;
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
