@@ -43,7 +43,7 @@
 // -----------------------------------------------------------------------------------------
                         bindings = <
    &kp GRAVE  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBKT
-   &kp ESC  &kp A &hm LGUI S &mh LALT D &hm LCTL F &kp G   &kp H &hm RCTL J  &hm LALT K     &hm RGUI L   &kp SEMI &kp SQT
+   &kp ESC  &kp A &hm LGUI S &hm LALT D &hm LCTL F &kp G   &kp H &hm RCTL J  &hm LALT K     &hm RGUI L   &kp SEMI &kp SQT
    &kp BSLH &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RBKT
                   &lt 2 TAB &mt LSFT SPACE &lt 1 DEL   &lt 1 BSPC &mt RSFT RET &lt 2 TAB
                         >;
