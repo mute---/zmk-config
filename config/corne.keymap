@@ -45,7 +45,7 @@
                 ZMK_MACRO(mv_next, bindings = <&macro_press &kp LGUI>, <&macro_tap &kp RIGHT>, <&macro_release &kp LGUI>;)
                 ZMK_MACRO(mv_prev, bindings = <&macro_press &kp LGUI>, <&macro_tap &kp LEFT>, <&macro_release &kp LGUI>;)
                 ZMK_MACRO(fat_arrow, bindings = <&kp EQUAL &kp GT>;)
-        }
+        };
 
         keymap {
                 compatible = "zmk,keymap";
