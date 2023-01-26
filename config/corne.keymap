@@ -65,7 +65,7 @@
                         bindings = <
    &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR   &kp LPAR &kp RPAR    &kp UNDER &kp PLUS
    &kp N1   &kp N2 &hm LGUI N3   &hm LALT N4    &hm LCTL N5    &kp N6   &kp N7 &hm RCTL N8 &hm LALT N9 &hm RGUI N0 &kp MINUS &kp EQUAL
-   &trans   &mv_prev &wv_prev   &wv_next   &mv_next    &trans    &fat_arrow   &kp LBKT   &kp LBRC &kp RBRC    &kp RBKT &trans
+   &trans   &trans  &trans  &wv_prev   &wv_next      &trans    &fat_arrow   &trans   &kp LT &kp GT    &trans &kp RBRC
                           	        &trans &trans       &trans &trans &trans   &trans
                         >;
                 };
