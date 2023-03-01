@@ -11,14 +11,27 @@
 
 / {
         behaviors {
-                hm: homerow_mods {
+                hml: homerow_mods_left {
                         compatible = "zmk,behavior-hold-tap";
                         label = "HOMEROW_MODS";
                         #binding-cells = <2>;
                         tapping-term-ms = <150>;
-                        quick-tap-ms = <150>;
+                        quick-tap-ms = <125>;
+                        global-quick-tap;
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
+                        hold-trigger-key-positions = <6 7 8 9 10 11>;
+                };
+                hmr: homerow_mods_right {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "HOMEROW_MODS";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <150>;
+                        quick-tap-ms = <125>;
+                        global-quick-tap;
+                        flavor = "tap-preferred";
+                        bindings = <&kp>, <&kp>;
+                        hold-trigger-key-positions = <0 1 2 3 4 5>;
                 };
                 th: thumb_hold_tap {
                         compatible = "zmk,behavior-hold-tap";
@@ -30,6 +43,14 @@
                         bindings = <&mo>, <&kp>;
                 };
         };
+
+        &mt {
+                quick-tap = <200>;
+        }
+
+        &lt {
+                flavor = "hold-preffered";
+        }
 
         conditional_layers {
                 compatible = "zmk,conditional-layers";
@@ -53,40 +74,40 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
                         bindings = <
-   &kp GRAVE  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBKT
-   &kp ESC  &kp A &hm LGUI S &hm LALT D &hm LCTL F &kp G   &kp H &hm RCTL J  &hm LALT K     &hm RGUI L   &kp SEMI &kp SQT
-   &kp BSLH &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RBKT
-                  &th 2 TAB &mt LSFT SPACE &th 1 DEL   &th 1 BSPC &mt RSFT RET &th 2 TAB
+   &kp GRAVE    &kp Q   &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp LBKT
+   &kp ESC      &kp A   &hml LGUI S     &hml LALT D     &hml LCTL F     &kp G           &kp H           &hmr RCTL J     &hmr LALT K     &hmr RGUI L      &kp SEMI        &kp SQT
+   &kp BSLH     &kp Z   &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RBKT
+                                        &th 2 TAB       &lt 1 SPACE     &mt LSFT DEL    &mt RSFT BSPC   &lt 1 RET       &th 2 TAB
                         >;
                 };
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
                         bindings = <
-   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR   &kp LPAR &kp RPAR    &kp UNDER &kp PLUS
-   &kp N1   &kp N2 &hm LGUI N3   &hm LALT N4    &hm LCTL N5    &kp N6   &kp N7 &hm RCTL N8 &hm LALT N9 &hm RGUI N0 &kp MINUS &kp EQUAL
-   &trans   &trans  &trans  &wv_prev   &wv_next      &trans    &fat_arrow   &trans   &kp LT &kp GT    &trans &kp RBRC
-                          	        &trans &trans       &trans &trans &trans   &trans
+   &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT       &kp CARET       &kp AMPS        &kp STAR        &kp LPAR        &kp RPAR        &kp UNDER       &kp PLUS
+   &trans       &kp N1  &hml LGUI N2    &hml LALT N3    &hml LCTL N4    &kp N5          &kp MINUS       &hmr RCTL LBKT  &hmr LALT LBRC  &hmr RGUI RBRC  &kp RBKT        &trans
+   &trans       &kp N6  &kp N7          &kp N8          &kp N9          &kp N0          &kp EQUAL       &fat_arrow      &kp LT          &kp GT          &kp DOT         &trans
+                                        &trans          &trans          &trans          &trans          &trans          &trans
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
                         bindings = <
-   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-   &trans &trans &hm LGUI C_PREV &hm LALT C_PP &hm LCTL C_NEXT &kp C_VOL_UP &kp LEFT &hm RCTL DOWN &hm LALT UP &hm RGUI RIGHT &trans &kp PSCRN
-   &kp LS(LCTRL) &kp INS &trans &trans &kp C_MUTE &kp C_VOL_DN &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &kp SLCK
-                          	        &trans &trans       &trans &trans &trans   &trans
+   &kp F1               &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp F11         &kp F12
+   &trans               &kc C_MUTE      &hml LGUI C_PREV &hml LALT C_PP &hml LCTL C_NEXT &kp C_VOL_UP   &trans          &hmr RCTL LEFT  &hmr LALT DOWN  &hmr RGUI UP    &kc RIGHT       &kp PSCRN
+   &kp LS(LCTRL)        &kp INS         &trans          &wv_prev        &kp wv_next     &kp C_VOL_DN    &trans          &kp HOME        &kp PG_DOWN     &kp PG_UP       &kc END         &kp SLCK
+                          	                        &trans          &trans          &trans          &trans          &trans          &trans
                         >;
                 };
                 
                 adjust_layer {
 // -----------------------------------------------------------------------------------------
                         bindings = <
-   &reset &bootloader &trans &trans &trans &trans       &trans &trans &trans &trans &bootloader &reset
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &bt BT_CLR
-   &out OUT_BLE &out OUT_USB &trans &trans &trans &trans        &trans &trans &trans &trans &out OUT_USB &out OUT_BLE
-                          	        &trans &trans       &trans &trans &trans   &trans
+   &reset       &bootloader     &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &bootloader     &reset
+   &bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_SEL 4    &bt BT_SEL 3    &bt BT_SEL 2    &bt BT_SEL 1    &bt BT_SEL 0    &bt BT_CLR
+   &out OUT_BLE &out OUT_USB    &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &out OUT_USB    &out OUT_BLE
+                          	                &trans          &trans          &trans          &trans          &trans          &trans
                         >;
                 };
         };
