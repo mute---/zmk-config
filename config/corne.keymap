@@ -14,7 +14,7 @@
 };
 
 &lt {
-        flavor = "hold-preffered";
+        flavor = "hold-preferred";
 };
 
 / {
