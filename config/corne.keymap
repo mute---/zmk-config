@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 &mt {
-        quick-tap = <200>;
+        quick-tap-ms = <200>;
 };
 
 &lt {
