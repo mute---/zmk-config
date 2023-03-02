@@ -94,9 +94,9 @@
                 raise_layer {
 // -----------------------------------------------------------------------------------------
                         bindings = <
-   &kp F1               &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp F11         &kp F12
-   &trans               &kp C_MUTE      &hml LGUI C_PREV &hml LALT C_PP &hml LCTL C_NEXT &kp C_VOL_UP   &trans          &hmr RCTL LEFT  &hmr LALT DOWN  &hmr RGUI UP    &kp RIGHT       &kp PSCRN
-   &kp LS(LCTRL)        &kp INS         &trans          &wv_prev        &wv_next        &kp C_VOL_DN    &trans          &kp HOME        &kp PG_DN       &kp PG_UP       &kp END         &kp SLCK
+   &kp F1               &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp F11 &kp F12
+   &trans               &kp C_MUTE      &hml LGUI C_PREV &hml LALT C_PP &hml LCTL C_NEXT &kp C_VOL_UP   &kp LEFT        &hmr RCTL DOWN  &hmr LALT UP    &hmr RGUI RIGHT &trans  &kp PSCRN
+   &kp LS(LCTRL)        &kp INS         &trans          &wv_prev        &wv_next        &kp C_VOL_DN    &kp HOME        &kp PG_DN       &kp PG_UP       &kp END         &trans  &kp SLCK
                           	                        &trans          &trans          &trans          &trans          &trans          &trans
                         >;
                 };
