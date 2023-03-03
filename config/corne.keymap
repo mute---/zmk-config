@@ -23,6 +23,11 @@
         flavor = "hold-preferred";
 };
 
+&sk {
+    release-after-ms = <500>;
+    quick-release;
+};
+
 &caps_word {
         continue-list = <UNDERSCORE MINUS BACKSPACE DELETE SEMICOLON>; // semicolon to support colemak
 };
@@ -86,7 +91,7 @@
                         bindings = <
    &kp GRAVE    &kp Q   &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp LBKT
    &kp ESC      &kp A   &hml LGUI S     &hml LALT D     &hml LCTL F     &kp G           &kp H           &hmr RCTL J     &hmr LALT K     &hmr RGUI L     &kp SEMI        &kp SQT
-   &kp BSLH     &kp Z   &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RBKT
+   &sk LSFT     &kp Z   &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RBKT
                                         &th RAISE TAB   &lt LOWER SPACE &mt LSFT DEL    &mt RSFT BSPC   &lt LOWER RET   &th RAISE TAB
                         >;
                 };
@@ -95,8 +100,8 @@
 // -----------------------------------------------------------------------------------------
                         bindings = <
    &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT       &kp CARET       &kp AMPS        &kp STAR        &kp LPAR        &kp RPAR        &kp UNDER       &kp PLUS
-   &caps_word   &kp N1  &hml LGUI N2    &hml LALT N3    &hml LCTL N4    &kp N5          &kp MINUS       &hmr RCTL LBKT  &hmr LALT LBRC  &hmr RGUI RBRC  &kp RBKT        &trans
-   &trans       &kp N6  &kp N7          &kp N8          &kp N9          &kp N0          &kp EQUAL       &fat_arrow      &kp LT          &kp GT          &kp DOT         &trans
+   &caps_word   &kp N1  &hml LGUI N2    &hml LALT N3    &hml LCTL N4    &kp N5          &kp MINUS       &hmr RCTL LBKT  &hmr LALT LBRC  &hmr RGUI RBRC  &kp RBKT        &kp PIPE
+   &trans       &kp N6  &kp N7          &kp N8          &kp N9          &kp N0          &kp EQUAL       &fat_arrow      &kp LT          &kp GT          &kp DOT         &kp BSLH
                                         &trans          &trans          &trans          &trans          &trans          &trans
                         >;
                 };
