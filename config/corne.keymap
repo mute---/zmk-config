@@ -9,12 +9,11 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-enum LAYERS {
-        DEFAULT,
-        LOWER,
-        RAISE,
-        ADJUST
-}
+// Layers
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
+#define ADJUST  3
 
 &mt {
         quick-tap-ms = <200>;
