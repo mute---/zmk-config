@@ -25,8 +25,8 @@ enum LAYERS {
 };
 
 &caps_word {
-        continue-list = <UNDERSCORE MINUS BACKSPACE DELETE SEMICOLON> // semicolon to support colemak
-}
+        continue-list = <UNDERSCORE MINUS BACKSPACE DELETE SEMICOLON>; // semicolon to support colemak
+};
 
 / {
         behaviors {
