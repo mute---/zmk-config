@@ -99,7 +99,7 @@
                 default_layer {
                     bindings = <
             &kp N1    &kp N2    &kp N3      &kp N4      &kp N5      &kp N6                                              &kp N7          &kp N8      &kp N9      &kp N0  &kp MINUS   &kp EQUAL
-&kp GRAVE   &kp TAB   &kp Q     &kp W       &kp E       &kp R       &kp T                                               &kp Y           &kp U       &kp I       &kp O   &kp P       &kp LBKT    &kp RSLH
+&kp GRAVE   &kp TAB   &kp Q     &kp W       &kp E       &kp R       &kp T                                               &kp Y           &kp U       &kp I       &kp O   &kp P       &kp LBKT    &kp BSLH
             &kp ESC   &kp A     WHML(S,     D,          F)          &kp G                                               &kp H           WHMR(J,     K,          L)      &kp SEMI    &kp SQT
             &sk LSHFT &kp Z     &kp X       &kp C       &kp V       &kp B                                               &kp N           &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp RBKT
                       &mo RAISE &kp LCTRL   &kp LALT    &kp LGUI    &mt LSHFT SPACE &lt LOWER DEL       &lt LOWER BSPC  &mt RSHFT RET   &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT
@@ -110,7 +110,7 @@
                 default_layer_mac {
                     bindings = <
             &kp N1    &kp N2    &kp N3      &kp N4      &kp N5      &kp N6                                              &kp N7          &kp N8      &kp N9      &kp N0  &kp MINUS   &kp EQUAL
-&kp GRAVE   &kp TAB   &kp Q     &kp W       &kp E       &kp R       &kp T                                               &kp Y           &kp U       &kp I       &kp O   &kp P       &kp LBKT    &kp RSLH
+&kp GRAVE   &kp TAB   &kp Q     &kp W       &kp E       &kp R       &kp T                                               &kp Y           &kp U       &kp I       &kp O   &kp P       &kp LBKT    &kp BSLH
             &kp ESC   &kp A     MHML(S,     D,          F)          &kp G                                               &kp H           MHMR(J,     K,          L)      &kp SEMI    &kp SQT
             &sk LSHFT &kp Z     &kp X       &kp C       &kp V       &kp B                                               &kp N           &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp RBKT
                       &mo RAISE &kp LCTRL   &kp LALT    &kp LGUI    &mt LSHFT SPACE  &lt LOWER DEL      &lt LOWER BSPC  &mt RSHFT RET   &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT
@@ -142,7 +142,7 @@
 // -----------------------------------------------------------------------------------------
                 raise_layer {
                     bindings = <
-            &kp SLCK    &trans    &trans        &trans      &trans      &trans                                              &kp F7          &kp NLCK    &kp KP_SLASH    &kp KP_MULTIPLY &kp KP_MINUS    &kp F12
+            &kp SLCK    &trans    &trans        &trans      &trans      &trans                                              &trans          &kp NLCK    &kp KP_SLASH    &kp KP_MULTIPLY &kp KP_MINUS    &trans
 &trans      &trans      &trans    &trans        &trans      &trans      &kp PSCRN                                           &trans          &kp KP_N7   &kp KP_N8       &kp KP_N9       &kp KP_PLUS     &trans      &trans 
             &kp CAPS    &trans    &kp C_PREV    &kp C_PP    &kp C_NEXT  &kp C_VOL_UP                                        &kp LEFT        &kp KP_N4   &kp KP_N5       &kp KP_N6       &trans          &trans
             &trans      &trans    &trans        &trans      &kp C_MUTE  &kp C_VOL_DN                                        &kp HOME        &kp KP_N1   &kp KP_N2       &kp KP_N3       &trans          &trans
@@ -153,10 +153,10 @@
 // -----------------------------------------------------------------------------------------
                 raise_layer_mac {
                     bindings = <
-            &kp SLCK    &trans    &trans        &trans      &trans      &trans                                              &kp F7          &kp NLCK    &kp KP_SLASH    &kp KP_MULTIPLY &kp KP_MINUS    &kp F12
+            &kp SLCK    &trans    &trans        &trans      &trans      &trans                                              &trans          &kp NLCK    &kp KP_SLASH    &kp KP_MULTIPLY &kp KP_MINUS    &trans
 &trans      &trans      &trans    &trans        &trans      &trans      &kp PSCRN                                           &trans          &kp KP_N7   &kp KP_N8       &kp KP_N9       &kp KP_PLUS     &trans      &trans 
             &kp CAPS    &trans    &kp C_PREV    &kp C_PP    &kp C_NEXT  &kp C_VOL_UP                                        &trans          &kp KP_N4   &kp KP_N5       &kp KP_N6       &trans          &trans
-            &trans      &trans    &trans        &trans      &kp C_MUTE  &kp C_VOL_DN                                        &ksans          &kp KP_N1   &kp KP_N2       &kp KP_N3       &trans          &trans
+            &trans      &trans    &trans        &trans      &kp C_MUTE  &kp C_VOL_DN                                        &trans          &kp KP_N1   &kp KP_N2       &kp KP_N3       &trans          &trans
                         &trans    &trans        &trans      &trans      &trans      &trans                        &trans    &trans          &kp KP_N0   &kp KP_N0       &kp KP_DOT      &trans
                         >;
                 };
