@@ -18,10 +18,10 @@
 #define ADJUST      6
 
 #define WHML(s, d ,f) &hml LGUI s   &hml LALT d     &hml LCTRL f
-#define WHMR(j, k, l) &hmr RCTL j   &hmr LALT k     &hmr RCMD l
+#define WHMR(j, k, l) &hmr RCTRL j   &hmr LALT k     &hmr RCMD l
 
 #define MHML(s, d, f) &hml LCTRL s   &hml LALT d     &hml LGUI f
-#define MHMR(j, k, l) &hmr RCMD j   &hmr LALT k     &hmr RCTL l
+#define MHMR(j, k, l) &hmr RCMD j   &hmr LALT k     &hmr RCTRL l
 
 
 &mt {
