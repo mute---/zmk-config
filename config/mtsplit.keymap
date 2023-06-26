@@ -52,7 +52,7 @@
                 global-quick-tap;
                 flavor = "balanced";
                 bindings = <&kp>, <&kp>;
-                // hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 36 37 38 39 40 41>;
+                hold-trigger-key-positions = <6 7 8 9 10 11     19 20 21 22 23 24 25    32 33 34 35 36 37   44 45 46 47 48 49   50 51 52 53 54 55 56 57 58 59 60 61>;
             };
             hmr: homerow_mods_right {
                 compatible = "zmk,behavior-hold-tap";
@@ -63,7 +63,7 @@
                 global-quick-tap;
                 flavor = "balanced";
                 bindings = <&kp>, <&kp>;
-                // hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
+                hold-trigger-key-positions = <0 1 2 3 4 5    12 13 14 15 16 17 18   26 27 28 29 30 31   38 39 40 41 42 43   50 51 52 53 54 55 56 57 58 59 60 61>;
             };
             th: thumb_hold_tap {
                 compatible = "zmk,behavior-hold-tap";
@@ -95,44 +95,80 @@
         keymap {
                 compatible = "zmk,keymap";
 
+// -----------------------------------------------------------------------------------------
                 default_layer {
-// -----------------------------------------------------------------------------------------
-                bindings = <
-
-   &kp GRAVE    &kp Q   &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp LBKT
-   &kp ESC      &kp A   &hml LGUI S     &hml LALT D     &hml LCTL F     &kp G           &kp H           &hmr RCTL J     &hmr LALT K     &hmr RGUI L     &kp SEMI        &kp SQT
-   &sk LSFT     &kp Z   &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RBKT
-                                        &th RAISE TAB   &lt LOWER SPACE &mt LSFT DEL    &mt RSFT BSPC   &lt LOWER RET   &th RAISE TAB
+                    bindings = <
+            &kp N1    &kp N2    &kp N3      &kp N4      &kp N5      &kp N6                                              &kp N7          &kp N8      &kp N9      &kp N0  &kp MINUS   &kp EQUAL
+&kp GRAVE   &kp TAB   &kp Q     &kp W       &kp E       &kp R       &kp T                                               &kp Y           &kp U       &kp I       &kp O   &kp P       &kp LBKT    &kp RSLH
+            &kp ESC   &kp A     WHML(S,     D,          F)          &kp G                                               &kp H           WHMR(J,     K,          L)      &kp SEMI    &kp SQT
+            &sk LSFT  &kp Z     &kp X       &kp C       &kp V       &kp B                                               &kp N           &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp RBKT
+                      &mo RAISE & &kp LCTL  &kp LALT    &kp LGUI    &mt LSFT SPACE  &lt LOWER DEL       &lt LOWER BSPC  &mt RSFT RET    &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT
                         >;
                 };
 
+// -----------------------------------------------------------------------------------------
+                default_layer_mac {
+                    bindings = <
+            &kp N1    &kp N2    &kp N3      &kp N4      &kp N5      &kp N6                                              &kp N7          &kp N8      &kp N9      &kp N0  &kp MINUS   &kp EQUAL
+&kp GRAVE   &kp TAB   &kp Q     &kp W       &kp E       &kp R       &kp T                                               &kp Y           &kp U       &kp I       &kp O   &kp P       &kp LBKT    &kp RSLH
+            &kp ESC   &kp A     MHML(S,     D,          F)          &kp G                                               &kp H           MHMR(J,     K,          L)      &kp SEMI    &kp SQT
+            &sk LSFT  &kp Z     &kp X       &kp C       &kp V       &kp B                                               &kp N           &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp RBKT
+                      &mo RAISE & &kp LCTL  &kp LALT    &kp LGUI    &mt LSFT SPACE  &lt LOWER DEL       &lt LOWER BSPC  &mt RSFT RET    &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT
+                        >;
+                };
+
+// -----------------------------------------------------------------------------------------
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-                        bindings = <
-   &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT       &kp CARET       &kp AMPS        &kp STAR        &kp LPAR        &kp RPAR        &kp UNDER       &kp PLUS
-   &caps_word   &kp N1  &hml LGUI N2    &hml LALT N3    &hml LCTL N4    &kp N5          &kp MINUS       &hmr RCTL LBKT  &hmr LALT LBRC  &hmr RGUI RBRC  &kp RBKT        &kp PIPE
-   &trans       &kp N6  &kp N7          &kp N8          &kp N9          &kp N0          &kp EQUAL       &fat_arrow      &kp LT          &kp GT          &kp DOT         &kp BSLH
-                                        &trans          &trans          &trans          &trans          &trans          &trans
+                    bindings = <
+            &kp F1  &kp F2    &kp F3    &kp F4      &kp F5      &kp F6                                              &kp F7          &kp F8      &kp F9      &kp F10 &kp F11     &kp F12
+&trans      &kp F7  &kp F8    &kp F9    &kp F10     &kp F11     &kp F12                                             &trans          &trans      &trans      &trans  &trans      &trans      &trans 
+            &trans  &trans    &trans    &trans      &trans      &trans                                              &kp LEFT        WHMR(DOWN,  UP,         RIGHT)  &trans      &trans
+            &kp INS &trans    &trans    &wv_prev    &wv_next    &trans                                              &kp HOME        &kp PG_DN   &kp PG_UP   &kp END &trans      &trans
+                    &trans    &trans    &trans      &trans      &trans      &trans                        &trans    &trans          &trans      &trans      &trans  &trans
                         >;
                 };
 
-                raise_layer {
 // -----------------------------------------------------------------------------------------
-                        bindings = <
-   &kp F1               &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp F11 &kp F12
-   &trans               &kp C_MUTE      &hml LGUI C_PREV &hml LALT C_PP &hml LCTL C_NEXT &kp C_VOL_UP   &kp LEFT        &hmr RCTL DOWN  &hmr LALT UP    &hmr RGUI RIGHT &trans  &kp PSCRN
-   &kp LS(LCTRL)        &kp INS         &trans          &wv_prev        &wv_next        &kp C_VOL_DN    &kp HOME        &kp PG_DN       &kp PG_UP       &kp END         &trans  &kp SLCK
-                          	                        &trans          &trans          &trans          &trans          &trans          &trans
+                lower_layer_mac {
+                    bindings = <
+            &kp F1  &kp F2    &kp F3    &kp F4      &kp F5      &kp F6                                              &kp F7          &kp F8      &kp F9      &kp F10 &kp F11     &kp F12
+&trans      &kp F7  &kp F8    &kp F9    &kp F10     &kp F11     &kp F12                                             &trans          &trans      &trans      &trans  &trans      &trans      &trans 
+            &trans  &trans    &trans    &trans      &trans      &trans                                              &kp LEFT        MHMR(DOWN,  UP,         RIGHT)  &trans      &trans
+            &kp INS &trans    &trans    &wv_prev    &wv_next    &trans                                              &kp HOME        &kp PG_DN   &kp PG_UP   &kp END &trans      &trans
+                    &trans    &trans    &trans      &trans      &trans      &trans                        &trans    &trans          &trans      &trans      &trans  &trans
                         >;
                 };
-                
+
+// -----------------------------------------------------------------------------------------
+                raise_layer {
+                    bindings = <
+            &kp SLCK    &trans    &trans        &trans      &trans      &trans                                              &kp F7          &kp NLCK    &kp KP_SLASH    &kp KP_MULTIPLY &kp KP_MINUS    &kp F12
+&trans      &trans      &trans    &trans        &trans      &trans      &kp PSCRN                                           &trans          &kp KP_N7   &kp KP_N8       &kp KP_N9       &kp KP_PLUS     &trans      &trans 
+            &kp CAPS    &trans    &kp C_PREV    &kp C_PP    &kp C_NEXT  &kp C_VOL_UP                                        &kp LEFT        &kp KP_N4   &kp KP_N5       &kp KP_N6       &trans          &trans
+            &trans      &trans    &trans        &trans      &kp C_MUTE  &kp C_VOL_DN                                        &kp HOME        &kp KP_N1   &kp KP_N2       &kp KP_N3       &trans          &trans
+                        &trans    &trans        &trans      &trans      &trans      &trans                        &trans    &trans          &kp KP_N0   &kp KP_N0       &kp KP_DOT      &trans
+                        >;
+                };
+
+// -----------------------------------------------------------------------------------------
+                raise_layer_mac {
+                    bindings = <
+            &kp SLCK    &trans    &trans        &trans      &trans      &trans                                              &kp F7          &kp NLCK    &kp KP_SLASH    &kp KP_MULTIPLY &kp KP_MINUS    &kp F12
+&trans      &trans      &trans    &trans        &trans      &trans      &kp PSCRN                                           &trans          &kp KP_N7   &kp KP_N8       &kp KP_N9       &kp KP_PLUS     &trans      &trans 
+            &kp CAPS    &trans    &kp C_PREV    &kp C_PP    &kp C_NEXT  &kp C_VOL_UP                                        &kp LEFT        &kp KP_N4   &kp KP_N5       &kp KP_N6       &trans          &trans
+            &trans      &trans    &trans        &trans      &kp C_MUTE  &kp C_VOL_DN                                        &kp HOME        &kp KP_N1   &kp KP_N2       &kp KP_N3       &trans          &trans
+                        &trans    &trans        &trans      &trans      &trans      &trans                        &trans    &trans          &kp KP_N0   &kp KP_N0       &kp KP_DOT      &trans
+                        >;
+                };
+
                 adjust_layer {
 // -----------------------------------------------------------------------------------------
-                        bindings = <
-   &reset       &bootloader     &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &bootloader     &reset
-   &bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &bt BT_SEL 4    &bt BT_SEL 3    &bt BT_SEL 2    &bt BT_SEL 1    &bt BT_SEL 0    &bt BT_CLR
-   &out OUT_BLE &out OUT_USB    &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &out OUT_USB    &out OUT_BLE
-                          	                &trans          &trans          &trans          &trans          &trans          &trans
+                    bindings = <
+        &reset          &bootloader    &trans          &trans          &trans          &trans                               &trans          &trans          &trans          &trans          &bootloader     &reset
+        &trans          &trans         &trans          &trans          &trans          &trans                               &trans          &trans          &trans          &trans          &trans          &trans
+&trans  &bt BT_CLR      &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                         &bt BT_SEL 4    &bt BT_SEL 3    &bt BT_SEL 2    &bt BT_SEL 1    &bt BT_SEL 0    &bt BT_CLR     &trans
+        &out OUT_BLE    &out OUT_USB   &trans          &trans          &trans          &trans                               &trans          &trans          &trans          &trans          &out OUT_USB    &out OUT_BLE
+                        &trans         &trans          &trans          &trans          &trans       &trans      &trans      &trans          &trans          &trans          &trans          &trans
                         >;
                 };
         };
