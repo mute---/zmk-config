@@ -17,11 +17,11 @@
 #define RAISE_MAC   5
 #define ADJUST      6
 
-#define WHML(s, d ,f) &hml LGUI s   &hml LALT d     &hml LCTL f
-#define WHMR(j, k, l) &hmr RCTL j   &hmr LALT k     &hmr RGUI l
+#define WHML(s, d ,f) &hml LGUI s   &hml LALT d     &hml LCTRL f
+#define WHMR(j, k, l) &hmr RCTL j   &hmr LALT k     &hmr RCMD l
 
-#define MHML(s, d, f) &hml LCTL s   &hml LALT d     &hml LGUI f
-#define MHMR(j, k, l) &hmr RGUI j   &hmr LALT k     &hmr RCTL l
+#define MHML(s, d, f) &hml LCTRL s   &hml LALT d     &hml LGUI f
+#define MHMR(j, k, l) &hmr RCMD j   &hmr LALT k     &hmr RCTL l
 
 
 &mt {
@@ -101,8 +101,8 @@
             &kp N1    &kp N2    &kp N3      &kp N4      &kp N5      &kp N6                                              &kp N7          &kp N8      &kp N9      &kp N0  &kp MINUS   &kp EQUAL
 &kp GRAVE   &kp TAB   &kp Q     &kp W       &kp E       &kp R       &kp T                                               &kp Y           &kp U       &kp I       &kp O   &kp P       &kp LBKT    &kp RSLH
             &kp ESC   &kp A     WHML(S,     D,          F)          &kp G                                               &kp H           WHMR(J,     K,          L)      &kp SEMI    &kp SQT
-            &sk LSFT  &kp Z     &kp X       &kp C       &kp V       &kp B                                               &kp N           &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp RBKT
-                      &mo RAISE &kp LCTL    &kp LALT    &kp LGUI    &mt LSFT SPACE  &lt LOWER DEL       &lt LOWER BSPC  &mt RSFT RET    &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT
+            &sk LSHFT &kp Z     &kp X       &kp C       &kp V       &kp B                                               &kp N           &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp RBKT
+                      &mo RAISE &kp LCTL    &kp LALT    &kp LGUI    &mt LSHFT SPACE &lt LOWER DEL       &lt LOWER BSPC  &mt RSHFT RET   &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT
                         >;
                 };
 
