@@ -21,3 +21,7 @@ include:
     shield: mtsplit_left
   - board: nrfmicro_13_52833
     shield: mtsplit_right
+  - board: seeeduino_xiao_ble
+    shield: mtsplit2_left
+  - board: seeeduino_xiao_ble
+    shield: mtsplit2_right
