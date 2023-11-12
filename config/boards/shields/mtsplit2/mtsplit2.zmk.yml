@@ -1,0 +1,11 @@
+file_format: "1"
+id: mtsplit2
+name: mtsplit-choc
+type: shield
+url: https://github.com/mute---/
+requires: [xiao]
+features:
+  - keys
+siblings:
+  - mtsplit2_left
+  - mtsplit2_right
