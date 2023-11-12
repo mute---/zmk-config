@@ -1,6 +1,6 @@
 file_format: "1"
 id: mtsplit2
-name: mtsplit-choc
+name: mtsplit2
 type: shield
 url: https://github.com/mute---/
 requires: [xiao]
