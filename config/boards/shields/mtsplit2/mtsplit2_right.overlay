@@ -1,7 +1,7 @@
 #include "mtsplit2.dtsi"
 
 &default_transform {
-    col-offset = <7>;
+    col-offset = <6>;
 };
 
 &default_scan {
