@@ -1,4 +1,4 @@
-#include "mtsplit.dtsi"
+#include "mtsplit2.dtsi"
 
 &default_scan {
     col-gpios

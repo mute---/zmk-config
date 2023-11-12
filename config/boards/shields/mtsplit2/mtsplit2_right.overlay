@@ -1,4 +1,4 @@
-#include "mtsplit.dtsi"
+#include "mtsplit2.dtsi"
 
 &default_transform {
     col-offset = <7>;
