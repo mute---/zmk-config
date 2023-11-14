@@ -25,3 +25,5 @@ include:
     shield: mtsplit2_left
   - board: seeeduino_xiao_ble
     shield: mtsplit2_right
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
