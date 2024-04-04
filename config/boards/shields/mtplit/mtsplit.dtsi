@@ -22,7 +22,7 @@ RC(4,0) RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)                 RC(1,8) 
     default_scan: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
-
+        wakeup-source;
         diode-direction = "col2row";
         row-gpios
             = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>

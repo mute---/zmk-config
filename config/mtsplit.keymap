@@ -33,7 +33,6 @@
         behaviors {
             hml: homerow_mods_left {
                 compatible = "zmk,behavior-hold-tap";
-                label = "LEFT_HOMEROW_MODS";
                 #binding-cells = <2>;
                 tapping-term-ms = <150>;
                 quick-tap-ms = <125>;
@@ -44,7 +43,6 @@
             };
             hmr: homerow_mods_right {
                 compatible = "zmk,behavior-hold-tap";
-                label = "RIGHT_HOMEROW_MODS";
                 #binding-cells = <2>;
                 tapping-term-ms = <150>;
                 quick-tap-ms = <125>;
@@ -55,7 +53,6 @@
             };
             th: thumb_hold_tap {
                 compatible = "zmk,behavior-hold-tap";
-                label = "THUMB_LAYER_TAPS";
                 #binding-cells = <2>;
                 tapping-term-ms = <200>;
                 quick-tap-ms = <200>;
