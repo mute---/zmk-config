@@ -80,6 +80,66 @@
             ZMK_MACRO(mv_prev, bindings = <&macro_press &kp LGUI>, <&macro_tap &kp LEFT>, <&macro_release &kp LGUI>;)
         };
 
+        combos {
+            compatible = "zmk,combos";
+            lctlalt {
+                timeout-ms = <25>;
+                key-positions = <28 29>;
+                bindings = <&kp LC(LALT)>;
+                require-prior-idle-ms = <125>;
+                layers = <0 1 2>;
+            };
+            rctlalt {
+                timeout-ms = <25>;
+                key-positions = <32 33>;
+                bindings = <&kp LC(LALT)>;
+                require-prior-idle-ms = <125>;
+                layers = <0 1 2>;
+            };
+            lctlwin {
+                timeout-ms = <25>;
+                key-positions = <27 29>;
+                bindings = <&kp LC(LWIN)>;
+                require-prior-idle-ms = <125>;
+                layers = <0 1 2>;
+            };
+            rctlwin {
+                timeout-ms = <25>;
+                key-positions = <32 34>;
+                bindings = <&kp LC(LWIN)>;
+                require-prior-idle-ms = <125>;
+                layers = <0 1 2>;
+            };
+            laltwin {
+                timeout-ms = <25>;
+                key-positions = <27 28>;
+                bindings = <&kp LG(LALT)>;
+                require-prior-idle-ms = <125>;
+                layers = <0 1 2>;
+            };
+            raltwin {
+                timeout-ms = <25>;
+                key-positions = <33 34>;
+                bindings = <&kp LG(LALT)>;
+                require-prior-idle-ms = <125>;
+                layers = <0 1 2>;
+            };
+            lall {
+                timeout-ms = <25>;
+                key-positions = <27 28 29>;
+                bindings = <&kp LC(LG(LALT))>;
+                require-prior-idle-ms = <125>;
+                layers = <0 1 2>;
+            };
+            rall {
+                timeout-ms = <25>;
+                key-positions = <32 33 34>;
+                bindings = <&kp LC(LG(LALT))>;
+                require-prior-idle-ms = <125>;
+                layers = <0 1 2>;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
