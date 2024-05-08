@@ -10,12 +10,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT     0
-#define DEFAULT_MAC 1
-#define LOWER       2
-#define LOWER_MAC   3
-#define RAISE       4
-#define RAISE_MAC   5
-#define ADJUST      6
+#define SYMNUM      1
+#define NAVFN       2
+#define MEDIA       3
+#define ADJUST      4
 
 #define WHML(s, d ,f) &hml LGUI s   &hml LALT d     &hml LCTRL f
 #define WHMR(j, k, l) &hmr RCTRL j  &hmr LALT k     &hmr RCMD l
@@ -26,6 +24,9 @@
 
 &lt {
     flavor = "hold-preferred";
+};
+
+&mt {
     quick-tap-ms = <200>;
 };
 
@@ -37,7 +38,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <150>;
                 quick-tap-ms = <125>;
-                global-quick-tap;
+                require-prior-idle-ms = <125>;
                 flavor = "balanced";
                 bindings = <&kp>, <&kp>;
                 hold-trigger-key-positions = <6 7 8 9 10 11     18 19 20 21 22 23   30 31 32 33 34 35   42 43 44 45 46 47   48 49 50 51 52 53>;
@@ -48,7 +49,7 @@
                 #binding-cells = <2>;
                 tapping-term-ms = <150>;
                 quick-tap-ms = <125>;
-                global-quick-tap;
+                require-prior-idle-ms = <125>;
                 flavor = "balanced";
                 bindings = <&kp>, <&kp>;
                 hold-trigger-key-positions = <0 1 2 3 4 5   12 13 14 15 16 17   24 25 26 27 28 29   36 37 38 39 40 41   48 49 50 51 52 53>;
@@ -67,8 +68,8 @@
         conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
-                if-layers = <2 4>;
-                then-layer = <6>;
+                if-layers = <2 3>;
+                then-layer = <4>;
             };
         };
 
@@ -85,68 +86,47 @@
 // -----------------------------------------------------------------------------------------
                 default_layer {
                     bindings = <
-            &kp N1    &kp N2    &kp N3      &kp N4          &kp N5           &kp N6                              &kp N7          &kp N8      &kp N9      &kp N0  &kp MINUS   &kp EQUAL
-            &kp GRAVE &kp Q     &kp W       &kp E           &kp R            &kp T                               &kp Y           &kp U       &kp I       &kp O   &kp P       &kp LBKT
-            &kp ESC   &kp A     WHML(S,     D,              F)               &kp G                               &kp H           WHMR(J,     K,          L)      &kp SEMI    &kp SQT
-            &kp BSLH  &kp Z     &kp X       &kp C           &kp V            &kp B                               &kp N           &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp RBKT
-                                            &lt RAISE TAB   &mt LSHFT SPACE  &lt LOWER DEL       &lt LOWER BSPC  &mt RSHFT RET   &lt RAISE TAB    
+            &kp N1          &kp N2    &kp N3      &kp N4          &kp N5           &kp N6                              &kp N7          &kp N8      &kp N9      &kp N0  &kp MINUS   &kp EQUAL
+            &kp GRAVE       &kp Q     &kp W       &kp E           &kp R            &kp T                               &kp Y           &kp U       &kp I       &kp O   &kp P       &kp LBKT
+            &kp ESC         &kp A     WHML(S,     D,              F)               &kp G                               &kp H           WHMR(J,     K,          L)      &kp SEMI    &kp SQT
+            &lt MEDIA BSLH  &kp Z     &kp X       &kp C           &kp V            &kp B                               &kp N           &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp RBKT
+                                                  &th NAVFN TAB   &lt SYMNUM SPACE  &mt RSHFT DEL      &mt RSHFT BSPC  &lt SYMNUM RET  &th NAVFN TAB    
                         >;
                 };
 
 // -----------------------------------------------------------------------------------------
-                default_layer_mac {
-                    bindings = <
-            &kp N1    &kp N2    &kp N3      &kp N4          &kp N5           &kp N6                             &kp N7          &kp N8      &kp N9      &kp N0  &kp MINUS   &kp EQUAL
-            &kp GRAVE &kp Q     &kp W       &kp E           &kp R            &kp T                              &kp Y           &kp U       &kp I       &kp O   &kp P       &kp LBKT
-            &kp ESC   &kp A     MHML(S,     D,              F)               &kp G                              &kp H           MHMR(J,     K,          L)      &kp SEMI    &kp SQT
-            &sk BSLH  &kp Z     &kp X       &kp C           &kp V            &kp B                              &kp N           &kp M       &kp COMMA   &kp DOT &kp FSLH    &kp RBKT
-                                            &lt RAISE TAB   &mt LSHFT SPACE  &lt LOWER DEL      &lt LOWER BSPC  &mt RSHFT RET   &lt RAISE TAB
+                navfn_layer {
+                    bindings = <     
+            &trans       &trans    &trans    &trans      &trans      &trans                                           &trans      &trans     &trans   &trans      &trans     &trans
+            &kp F1       &kp F2    &kp F3    &kp F4      &kp F5      &kp F6                                           &kp PG_UP   &kp HOME   &kp UP   &kp END     &trans     &kp SLCK 
+            &kp F7       &kp F8    WHML(F9,  F10,        F11)        &kp F12                                          &kp PG_DN   WHMR(LEFT, DOWN,    RIGHT)      &trans     &kp PSCRN
+            &kp LS(LCTL) &trans    &trans    &wv_prev    &wv_next    &trans                                           &trans      &trans     &trans   &trans      &kp K_APP  &kp INS
+                                                         &trans      &trans      &trans                     &trans    &trans      &trans
                         >;
                 };
 
 // -----------------------------------------------------------------------------------------
-                lower_layer {
+                symnum_layer {
                     bindings = <
-            &kp F1  &kp F2    &kp F3    &kp F4      &kp F5      &kp F6                                              &trans    &kp KP_NLCK &kp KP_SLASH    &kp KP_MULTIPLY &kp KP_MINUS    &kp F12
-            &kp F7  &kp F8    &kp F9    &kp F10     &kp F11     &kp F12                                             &trans    &kp KP_N7   &kp KP_N8       &kp KP_N9       &kp KP_PLUS     &trans 
-            &trans  &trans    &trans    &trans      &trans      &trans                                              &trans    &kp KP_N4   &kp KP_N5       &kp KP_N6       &trans          &trans
-            &kp INS &trans    &trans    &wv_prev    &wv_next    &trans                                              &kp KP_N0 &kp KP_N1   &kp KP_N2       &kp KP_N3       &kp KP_DOT      &trans
-                                                    &trans      &trans      &trans                        &trans    &trans    &trans
+            &trans      &trans    &trans        &trans      &trans      &trans                            &trans        &trans      &trans      &trans      &trans      &trans
+            &kp EXCL    &kp AT    &kp HASH      &kp DLLR    &kp PRCNT   &kp CARET                         &kp AMPS      &kp STAR    &kp LPAR    &kp RPAR    &kp MINUS   &kp EQUAL 
+            &trans      &kp N1    WHML(N2,      N3,         N4)         &kp N5                            &kp UNDER     WHMR(LBRC,  LBKT,       RBKT)       &kp RBRC    &kp DQT
+            &kp DOT     &kp N6    &kp N7        &kp N8      &kp N9      &kp N0                            &kp PLUS      &kp EQUAL   &kp LT      &kp GT      &kp QMARK   &trans
+                                                            &trans      &trans      &trans      &trans    &trans        &trans
                         >;
                 };
 
 // -----------------------------------------------------------------------------------------
-                lower_layer_mac {
+                media_layer {
                     bindings = <
-            &kp F1  &kp F2    &kp F3    &kp F4      &kp F5      &kp F6                                    &trans    &kp KP_NLCK &kp KP_SLASH    &kp KP_MULTIPLY &kp KP_MINUS    &kp F12
-            &kp F7  &kp F8    &kp F9    &kp F10     &kp F11     &kp F12                                   &trans    &kp KP_N7   &kp KP_N8       &kp KP_N9       &kp KP_PLUS     &trans 
-            &trans  &trans    &trans    &trans      &trans      &trans                                    &trans    &kp KP_N4   &kp KP_N5       &kp KP_N6       &trans          &trans
-            &kp INS &trans    &trans    &wv_prev    &wv_next    &trans                                    &kp KP_N0 &kp KP_N1   &kp KP_N2       &kp KP_N3       &kp KP_DOT      &trans
-                                                    &trans      &trans      &trans              &trans    &trans    &trans
+            &trans          &trans          &trans        &trans      &trans      &trans                            &trans      &trans      &trans      &trans      &trans  &trans
+            &trans          &kp C_CAPTIONS  &kp C_RW      &trans      &kp C_FF    &trans                            &trans      &kp KP_N7   &kp KP_N8   &kp KP_N9   &trans  &kp KP_NLCK
+            &kp CAPS        &trans          &kp C_PREV    &kp C_PP    &kp C_NEXT  &kp C_VOL_UP                      &trans      &kp KP_N4   &kp KP_N5   &kp KP_N6   &trans  &trans
+            &trans          &trans          &trans        &trans      &kp C_MUTE  &kp C_VOL_DN                      &trans      &kp KP_N1   &kp KP_N2   &kp KP_N3   &trans  &trans
+                                                                      &trans      &trans      &trans      &trans    &trans      &kp KP_N0
                         >;
                 };
 
-// -----------------------------------------------------------------------------------------
-                raise_layer {
-                    bindings = <
-            &kp SLCK        &trans    &trans        &trans      &trans      &trans                            &trans      &trans      &trans  &trans      &trans  &trans
-            &trans          &trans    &kp C_PREV    &kp C_PP    &kp C_NEXT  &kp PSCRN                         &kp PG_UP   &kp HOME    &kp UP  &kp END     &trans  &trans 
-            &kp CAPS        &trans    &trans        &trans      &trans      &kp C_VOL_UP                      &kp PG_DN   WHMR(LEFT,  DOWN,   RIGHT)      &trans  &trans
-            &kp LS(LCTL)    &trans    &trans        &trans      &kp C_MUTE  &kp C_VOL_DN                      &trans      &trans      &trans  &trans      &trans  &trans
-                                                                &trans      &trans      &trans      &trans    &trans      &trans
-                        >;
-                };
-
-// -----------------------------------------------------------------------------------------
-                raise_layer_mac {
-                    bindings = <
-            &kp SLCK        &trans    &trans        &trans      &trans      &trans                            &trans      &trans      &trans  &trans      &trans  &trans
-            &trans          &trans    &kp C_PREV    &kp C_PP    &kp C_NEXT  &kp PSCRN                         &kp PG_UP   &kp HOME    &kp UP  &kp END     &trans  &trans 
-            &kp CAPS        &trans    &trans        &trans      &trans      &kp C_VOL_UP                      &kp PG_DN   MHMR(LEFT,  DOWN,   RIGHT)      &trans  &trans
-            &kp LC(SPACE)   &trans    &trans        &trans      &kp C_MUTE  &kp C_VOL_DN                      &trans      &trans      &trans  &trans      &trans  &trans
-                                                                &trans      &trans      &trans      &trans    &trans      &trans
-                        >;
-                };
 
 // -----------------------------------------------------------------------------------------
                 adjust_layer {
