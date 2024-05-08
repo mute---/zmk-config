@@ -10,8 +10,8 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT     0
-#define SYMNUM      1
-#define NAVFN       2
+#define NAVFN       1
+#define SYMNUM      2
 #define MEDIA       3
 #define ADJUST      4
 
@@ -68,7 +68,7 @@
         conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
-                if-layers = <2 3>;
+                if-layers = <2 1>;
                 then-layer = <4>;
             };
         };
@@ -131,8 +131,8 @@
 // -----------------------------------------------------------------------------------------
                 adjust_layer {
                     bindings = <
-        &sys_reset      &bootloader    &trans          &trans          &trans          &trans                               &trans          &trans          &trans          &trans          &bootloader     &sys_reset
         &trans          &trans         &trans          &trans          &trans          &trans                               &trans          &trans          &trans          &trans          &trans          &trans
+        &sys_reset      &bootloader    &trans          &trans          &trans          &trans                               &trans          &trans          &trans          &trans          &bootloader     &sys_reset
         &bt BT_CLR      &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                         &bt BT_SEL 4    &bt BT_SEL 3    &bt BT_SEL 2    &bt BT_SEL 1    &bt BT_SEL 0    &bt BT_CLR
         &out OUT_BLE    &out OUT_USB   &trans          &trans          &trans          &trans                               &trans          &trans          &trans          &trans          &out OUT_USB    &out OUT_BLE
                                                                        &trans          &trans       &trans      &trans      &trans          &trans          
