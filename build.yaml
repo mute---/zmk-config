@@ -25,5 +25,9 @@ include:
     shield: mtsplit2_left
   - board: seeeduino_xiao_ble
     shield: mtsplit2_right
+  - board: nrf52840_mdk_usb_dongle
+    shield: mtsplit2_dongle
   - board: seeeduino_xiao_ble
+    shield: settings_reset
+  - board: nrf52840_mdk_usb_dongle
     shield: settings_reset

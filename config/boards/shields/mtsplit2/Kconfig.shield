@@ -3,3 +3,6 @@ config SHIELD_MTSPLIT2_LEFT
 
 config SHIELD_MTSPLIT2_RIGHT
     def_bool $(shields_list_contains,mtsplit2_right)
+
+config SHIELD_MTSPLIT2_DONGLE
+    def_bool $(shields_list_contains,mtsplit2_dongle)
