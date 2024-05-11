@@ -22,7 +22,7 @@
 #define MHMR(j, k, l) &hmr RCMD j   &hmr LALT k     &hmr RCTRL l
 
 #define WCOMBO(name, keys, code) name { \
-    timeout-ms = <50>; \
+    timeout-ms = <20>; \
     key-positions = <keys>; \
     bindings = <&kp code>; \
     require-prior-idle-ms = <125>; \
@@ -91,14 +91,14 @@
         combos {
             compatible = "zmk,combos";
             
-            WCOMBO(lctlalt, 28 29, LC(LALT))
-            WCOMBO(rctlalt, 32 33, LC(LALT))
-            WCOMBO(lctlwin, 27 29, LC(LWIN))
-            WCOMBO(rctlwin, 32 34, LC(LWIN))
-            WCOMBO(laltwin, 27 28, LG(LALT))
-            WCOMBO(raltwin, 33 34, LG(LALT))
-            WCOMBO(lhyper, 27 28 29, LC(LG(LALT)))
-            WCOMBO(rhyper, 32 33 34, LC(LG(LALT)))
+            WCOMBO(lctlalt, 27 28, LC(LALT))
+            WCOMBO(rctlalt, 31 32, LC(LALT))
+            WCOMBO(lctlwin, 26 28, LC(LWIN))
+            WCOMBO(rctlwin, 31 33, LC(LWIN))
+            WCOMBO(laltwin, 26 27, LG(LALT))
+            WCOMBO(raltwin, 32 33, LG(LALT))
+            WCOMBO(lhyper, 26 27 28, LC(LG(LALT)))
+            WCOMBO(rhyper, 31 32 33, LC(LG(LALT)))
         };
 
         keymap {
@@ -132,7 +132,7 @@
             &trans      &trans    &trans        &trans      &trans      &trans                            &trans        &trans      &trans      &trans      &trans      &trans
             &kp EXCL    &kp AT    &kp HASH      &kp DLLR    &kp PRCNT   &kp CARET                         &kp AMPS      &kp STAR    &kp LPAR    &kp RPAR    &kp UNDER   &kp PLUS 
             &trans      &kp N1    WHML(N2,      N3,         N4)         &kp N5                            &kp UNDER     WHMR(LBRC,  LBKT,       RBKT)       &kp RBRC    &kp DQT
-            &kp DOT     &kp N6    &kp N7        &kp N8      &kp N9      &kp N0                            &kp MINUS     &kp EQUAL   &kp LT      &kp GT      &kp QMARK   &kp O
+            &kp DOT     &kp N6    &kp N7        &kp N8      &kp N9      &kp N0                            &kp MINUS     &kp EQUAL   &kp LT      &kp GT      &kp QMARK   &kp LS(P)
                                                             &trans      &trans      &trans      &trans    &trans        &trans
                         >;
                 };
