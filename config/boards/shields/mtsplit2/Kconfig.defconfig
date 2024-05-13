@@ -1,7 +1,7 @@
-if SHIELD_MTSPLIT2_DONGLE
+if SHIELD_MTSPLIT2_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "mtsplit2-dongle"
+    default "mtsplit2-choc"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
