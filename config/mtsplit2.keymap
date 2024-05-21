@@ -80,6 +80,7 @@
             skh: sticky_hold {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
+                tapping-term-ms = <200>;
                 bindings = <&mo>, <&sk>;
             };
         };
@@ -141,10 +142,10 @@
                 symnum_layer {
                     bindings = <
             &trans      &trans    &trans        &trans      &trans      &trans                            &trans        &trans      &trans      &trans      &trans      &trans
-            &kp EXCL    &kp AT    &kp HASH      &kp DLLR    &kp PRCNT   &kp CARET                         &kp AMPS      &kp STAR    &kp LPAR    &kp RPAR    &kp UNDER   &kp PLUS 
-            &trans      &kp N5    WHML(N4,      N3,         N2)         &kp N1                            &kp UNDER     WHMR(LBRC,  LBKT,       RBKT)       &kp RBRC    &kp DQT
-            &kp DOT     &kp N6    &kp N7        &kp N8      &kp N9      &kp N0                            &kp MINUS     &kp EQUAL   &kp LT      &kp GT      &kp QMARK   &kp LS(P)
-                                                            &trans      &trans      &trans      &trans    &trans        &th NAVFN PIPE
+            &kp EXCL    &kp AT    &kp HASH      &kp DLLR    &kp PRCNT   &kp CARET                         &kp AMPS      &kp STAR    &kp LPAR    &kp RPAR    &kp LS(P)   &kp PLUS 
+            &kp COMMA   &kp N5    WHML(N4,      N3,         N2)         &kp N1                            &kp UNDER     WHMR(LBRC,  LBKT,       RBKT)       &kp RBRC    &kp DQT
+            &kp DOT     &kp N6    &kp N7        &kp N8      &kp N9      &kp N0                            &kp MINUS     &kp EQUAL   &kp LT      &kp GT      &kp QMARK   &kp TILDE
+                                                            &trans      &trans      &trans      &trans    &kp SPACE     &th NAVFN PIPE
                         >;
                 };
 
