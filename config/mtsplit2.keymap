@@ -152,10 +152,10 @@
 // -----------------------------------------------------------------------------------------
                 media_layer {
                     bindings = <
-            &trans          &trans          &trans        &trans      &trans      &trans                            &trans      &trans      &trans      &trans      &trans  &trans
-            &trans          &kp C_CAPTIONS  &kp C_RW      &trans      &kp C_FF    &trans                            &trans      &kp KP_N7   &kp KP_N8   &kp KP_N9   &trans  &kp KP_NLCK
-            &kp CAPS        &trans          &kp C_PREV    &kp C_PP    &kp C_NEXT  &kp C_VOL_UP                      &trans      &kp KP_N4   &kp KP_N5   &kp KP_N6   &trans  &trans
-            &trans          &trans          &trans        &trans      &kp C_MUTE  &kp C_VOL_DN                      &trans      &kp KP_N1   &kp KP_N2   &kp KP_N3   &trans  &trans
+            &trans          &trans          &trans        &trans      &trans      &trans                            &trans      &kp KP_EQUAL &kp KP_SLASH   &kp KP_ASTERISK &kp KP_MINUS    &trans
+            &trans          &kp C_CAPTIONS  &kp C_RW      &trans      &kp C_FF    &trans                            &trans      &kp KP_N7    &kp KP_N8      &kp KP_N9       &kp KP_PLUS     &kp KP_NLCK
+            &kp CAPS        &trans          &kp C_PREV    &kp C_PP    &kp C_NEXT  &kp C_VOL_UP                      &trans      &kp KP_N4    &kp KP_N5      &kp KP_N6       &kp KP_PLUS     &trans
+            &trans          &trans          &trans        &trans      &kp C_MUTE  &kp C_VOL_DN                      &trans      &kp KP_N1    &kp KP_N2      &kp KP_N3       &kp KP_DOT      &trans
                                                                       &trans      &trans      &trans      &trans    &trans      &kp KP_N0
                         >;
                 };
